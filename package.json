@@ -1,0 +1,35 @@
+{
+    "name": "todo-automation",
+    "version": "0.1.0",
+    "description": "Automated tests for todo page",
+    "author": "Wioletta Miklasewicz <wioletta.miklasewicz@gmail.com>",
+    "repository": {
+        "type": "git"
+    },
+    "directories": {
+        "test": "tests"
+    },
+    "scripts": {
+        "chrome-tests-with-html-report": "testcafe chrome tests/ --reporter html:reports/chrome-test-report.html",
+        "chrome-tests-with-spec-report": "testcafe chrome tests/ -r spec",
+        "firefox-tests-with-html-report": "testcafe firefox tests/ --reporter html:reports/firefox-test-report.html",
+        "firefox-tests-with-spec-report": "testcafe firefox tests/ -r spec",
+        "chrome:headless-tests-with-html-report": "testcafe chrome:headless tests/ --reporter html:reports/chrome-test-report.html",
+        "chrome:headless-tests-with-spec-report": "testcafe chrome:headless tests/ -r spec",
+        "firefox:headless-tests-with-html-report": "testcafe firefox:headless tests/ --reporter html:reports/firefox-test-report.html",
+        "firefox:headless-tests-with-spec-report": "testcafe firefox:headless tests/ -r spec"
+    },
+    "dependencies": {
+        "@babel/core": "^7.15.0",
+        "dotenv": "^10.0.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "moment": "^2.29.2",
+        "testcafe-reporter-html": "^1.4.6",
+        "testcafe": "^1.18.5"
+    },
+    "devDependencies": {
+        "eslint": "^8.13.0"
+
+    }
+}

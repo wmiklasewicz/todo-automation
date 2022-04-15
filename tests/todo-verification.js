@@ -20,7 +20,7 @@ dataSet.forEach((data) => {
 });
 
 dataSet.forEach((data) => {
-  test('Test case 2: Check todo element on the list and verify', async () => {
+  test(`Test case 2: Check todo element on the list and verify | data set: ${data.dataSet}`, async () => {
     await GeneralHelper.checkURL(process.env.GLOBAL_URL);
     await TodoPageHelper.createAndVerifyTodoItems([data.todoItemOne, data.todoItemTwo]);
     await TodoPageHelper.clickAndVerifyTodoTaskItem(0);

@@ -9,7 +9,7 @@ class TodoPage {
     return Selector('ul').withAttribute('class', 'todo-list').child('li');
   }
 
-  get toogleCheckboxSelector() {
+  get toggleCheckboxSelector() {
     return Selector('input').withAttribute('class', 'toggle');
   }
 

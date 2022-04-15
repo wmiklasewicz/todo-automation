@@ -15,7 +15,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     name: Prepare environment and execute tests
-    timeout-minutes: 25    
+    timeout-minutes: 10    
   steps:
     - uses: actions/setup-node@v1
       with:

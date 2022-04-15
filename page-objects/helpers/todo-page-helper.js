@@ -54,11 +54,11 @@ class TodoPageHelper {
   async clickAndVerifyTodoTaskItem(position) {
     await t
     // Make sure element is not completed before click
-      .expect(TodoPage.toogleCheckboxSelector.nth(position).parent('li').withAttribute('class', 'completed').exists)
+      .expect(TodoPage.toggleCheckboxSelector.nth(position).parent('li').withAttribute('class', 'completed').exists)
       .notOk()
-      .click(TodoPage.toogleCheckboxSelector.nth(position))
+      .click(TodoPage.toggleCheckboxSelector.nth(position))
     // Make sure element is completed after click
-      .expect(TodoPage.toogleCheckboxSelector.nth(position).parent('li').withAttribute('class', 'completed').exists)
+      .expect(TodoPage.toggleCheckboxSelector.nth(position).parent('li').withAttribute('class', 'completed').exists)
       .ok();
   }
 }

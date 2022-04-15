@@ -1,4 +1,5 @@
 ## TODOs automation
+![Alt text](resources/feed_cat.png?raw=true "Feed the cat")
 
 ## About The Project
 
@@ -72,10 +73,14 @@ Below there are examples of ways that tests could be started
      ```
 7. Tests that are being run with default html reporter will store its reports in folder report
 
+![Alt text](resources/reports.png?raw=true "Reports")
+
 ## Detailed Project Description
  
 Project have been developed using 2 main approaches:
 1. Page object pattern - this approach complies with DRY rule of programming, thanks to that we can create the project as a set of reusable components. This technique speeds up not only development itself (we have components we can reuse) but also greatly improve experience of future maintenance - update selectors in one place when something will change.
+
+![Alt text](resources/page_object.png?raw=true "Page object")
 
 2. Data driven development - here we try to separate data layer from the code, thich technique improves management of data within the test automation.
 

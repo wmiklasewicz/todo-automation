@@ -26,7 +26,7 @@ In order to install TestCafe and run tests you need to do steps below.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/wmiklasewicz/todo-automation.git
    ```
 2. Install NPM packages
    ```sh

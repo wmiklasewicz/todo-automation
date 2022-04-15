@@ -1,0 +1,43 @@
+# This is example draft workflow for todo tests
+name: Execute tests for todo tasks
+on:
+  schedule:
+    - cron:  '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      OS:
+        description: "The name of the operating system to run the tests with - [ubuntu-latest, macos-latest, windows-latest]"
+        required: true
+        default: "ubuntu-latest"
+    
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: Prepare environment and execute tests
+    timeout-minutes: 25    
+  steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: "17"
+
+    - name: Install Node modules
+      timeout-minutes: 3
+      continue-on-error: true
+      id: npmInstall1
+      run: npm ci
+    - name: Retry Install Node modules 1
+      timeout-minutes: 3
+      continue-on-error: true
+      id: npmInstall2
+      if: steps.npmInstall1.outcome=='failure'
+      run: npm ci
+    - name: Retry Install Node modules 2
+      timeout-minutes: 3
+      continue-on-error: false
+      id: npmInstall3
+      if: steps.npmInstall2.outcome=='failure'
+      run: npm ci       
+
+    - name: run-tests
+      run: npm run chrome:headless-tests-with-html-report

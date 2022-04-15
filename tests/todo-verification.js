@@ -12,7 +12,7 @@ fixture('Todo form verification')
   });
 
 dataSet.forEach((data) => {
-  test(`Test case 1: Check basic todo actions| data set: ${data.dataSet}`, async () => {
+  test(`Test case 1: Add todo elements and verify| data set: ${data.dataSet}`, async () => {
     await GeneralHelper.checkURL(process.env.GLOBAL_URL);
     await TodoPageHelper.createAndVerifyTodoItems([data.todoItemOne, data.todoItemTwo]);
     await GeneralHelper.takeScreenshot();
@@ -23,7 +23,7 @@ dataSet.forEach((data) => {
   test('Test case 2: Check todo element on the list and verify', async () => {
     await GeneralHelper.checkURL(process.env.GLOBAL_URL);
     await TodoPageHelper.createAndVerifyTodoItems([data.todoItemOne, data.todoItemTwo]);
-    await TodoPageHelper.clickTodoTaskItem(0);
+    await TodoPageHelper.clickAndVerifyTodoTaskItem(0);
     await GeneralHelper.takeScreenshot();
   });
 });

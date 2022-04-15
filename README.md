@@ -51,7 +51,7 @@ Below there are examples of ways that tests could be started
 2. Run specific test concurrently for 1 instance of chrome and 1 instance of frefox with html reporting
    ```sh
     testcafe .\tests\{testName}
-    Example1: testcafe .\tests\todo-verification.js
+    Example1: testcafe .\tests\todo-verification.js --reporter html:reports/test-report.html
    ```
 3. Running tests without html reporting but with output directly in console
    ```sh

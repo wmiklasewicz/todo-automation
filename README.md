@@ -56,13 +56,38 @@ Below there are examples of ways that tests could be started
    ```sh
     testcafe .\tests\ -r spec
    ```
-3. Manual override for browsers with console output, to return to html reports please remove "-r spec"
+4. Manual override for browsers with console output, to return to html reports please remove "-r spec"
    ```sh
     testcafe chrome .\tests\ -r spec
    ```
-4. Running specific test with browser override can be done in two ways
+5. Running specific test with browser override can be done in two ways
     ```sh
     testcafe chrome .\tests\{testName} -r spec
     Example: testcafe chrome .\tests\page.js -r spec
      ```
+6. Running tests using defined commands in package.json file
+    ```sh
+    Headless: npm run chrome:headless-tests-with-html-report
+    Non-headless: npm run firefox-tests-with-html-report
+     ```
+7. Tests that are being run with default html reporter will store its reports in folder report
+
+## Detailed Project Description
  
+Project have been developed using 2 main approaches:
+1. Page object pattern - this approach complies with DRY rule of programming, thanks to that we can create the project as a set of reusable components. This technique speeds up not only development itself (we have components we can reuse) but also greatly improve experience of future maintenance - update selectors in one place.
+
+2. Data driven development - here we try to separate data layer from the code, thich technique improves management of data within the test automation.
+
+3. Generic functions - automated tests are growing, so important thing is create generic functions, which can be reusable e.g. function for adding tasks.
+
+4. Screenshots - there's a function which allow to do a screenshot after desired step
+
+5. Config files
+  - .env - contains data related to starting sites links as well as test users if applies
+  - .testcaferc.json - config file for testCafe, you can define here everything related to timeouts, concurrency, browsers used and much more.
+  - package.json - standard config defining packages that will be downladed after typing `npm i`
+
+## Contact
+
+Wioletta Mikłasewicz - https://www.linkedin.com/in/wioletta-kisielewicz

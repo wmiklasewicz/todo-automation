@@ -39,5 +39,8 @@ jobs:
       if: steps.npmInstall2.outcome=='failure'
       run: npm ci       
 
-    - name: run-tests
+    - name: run-tests-chrome
       run: npm run chrome:headless-tests-with-html-report
+
+    - name: run-tests-firefox
+      run: npm run firefox:headless-tests-with-html-report
